@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+
     [SerializeField] private float jumpForce = 7f;
 
     [SerializeField] private Rigidbody rb;
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * GameManager.Instance.GetGameSpeed() * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0) && Mathf.Abs(rb.velocity.y) < 0.01f)
         {
