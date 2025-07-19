@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -9,7 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedIncresaseRate = 0.1f;
     [SerializeField] private float maxSpeed = 20f;
 
-    private bool isGamedRuninng = true;
+
+
+    private bool isGamedRuninng;
 
     void Awake()
     {
@@ -21,6 +24,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+    void Start()
+    {
+        //motionBlur = volumeProfile.GetType
     }
     void Update()
     {
@@ -34,5 +41,14 @@ public class GameManager : MonoBehaviour
     public float GetGameSpeed()
     {
         return gameSpeed;
+    }
+
+    public bool GetIsGameRunning()
+    {
+        return isGamedRuninng;
+    }
+    public void SetIsGameRuning(bool _isGamedRuninng)
+    {
+        isGamedRuninng = _isGamedRuninng;
     }
 }

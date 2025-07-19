@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class SyncManager : MonoBehaviour
@@ -14,6 +12,7 @@ public class SyncManager : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.GetIsGameRunning()) return;
         _stateQueue.Enqueue(new PlayerState
         {
             position = _player.transform.position,

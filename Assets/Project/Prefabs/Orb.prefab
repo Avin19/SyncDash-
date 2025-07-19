@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1162654045658272921}
   - component: {fileID: 3419465489295300021}
   - component: {fileID: 6277150896666933277}
+  - component: {fileID: 2545005805761907063}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Untagged
@@ -99,9 +100,22 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2545005805761907063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3947157679743318566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a2740bc614ee54e959e7aa5050a566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 6f7cabf9d2d6cfb48bcaf46d25c67aaa, type: 3}

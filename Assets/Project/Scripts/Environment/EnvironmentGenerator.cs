@@ -20,6 +20,8 @@ public class EnvironmentGenerator : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.Instance.GetIsGameRunning()) return;
+
         if (player.position.z > spawnZ - (tileLength * initialTiles))
         {
             SpawnTile();

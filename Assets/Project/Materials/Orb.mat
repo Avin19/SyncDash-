@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Power: 0.19
+    - _Power: -1.14
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _baseColor: {r: 9.968588, g: 0, b: 0.5462552, a: 1}
+    - _baseColor: {r: 5.9921575, g: 0.07046217, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &3312210857141615618
 MonoBehaviour:
