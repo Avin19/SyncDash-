@@ -17,7 +17,7 @@ public class SyncManager : MonoBehaviour
         _stateQueue.Enqueue(new PlayerState
         {
             position = _player.transform.position,
-            jumped = _player._jump,
+            jumped = _player.jump,
             timestamp = Time.time,
         });
         while (_stateQueue.Count > 0 && Time.time - _stateQueue.Peek().timestamp > _delay)

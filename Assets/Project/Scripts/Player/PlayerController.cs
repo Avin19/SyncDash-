@@ -3,26 +3,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _jumpForce = 7f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpForce = 7f;
 
     [SerializeField] private Rigidbody rb;
 
-    public bool _jump = false;
+    public bool jump = false;
 
     void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0) && Mathf.Abs(rb.velocity.y) < 0.01f)
         {
-            rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            _jump = true;
+            jump = true;
         }
         else
         {
-            _jump = false;
+            jump = false;
         }
     }
 
