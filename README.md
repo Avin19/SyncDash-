@@ -6,8 +6,24 @@
 
 ---
 
-## 🧠 Game Features
+##  Game Features
 
-### 🟦 Core Mechanics
-- Auto-forward movement
-- Tap to jump
+###  Core Mechanics
+Player cube auto-moves on right side of screen
+
+Left side mirrors player actions as ghost (via queue-based state sync)
+Tap to jump over obstacles
+Collect glowing orbs to earn points
+Game speed increases over time
+Ghost sync includes optional latency + interpolation
+Object pooling used for ground, obstacles, and orbs
+Shader effects:
+Player glow shader
+Obstacle dissolve shader
+Orb collection particle burst
+Motion blur increases during speed boosts
+Dual camera split-screen setup (player + ghost views)
+
+
+### Plant UML 
+ ![](Assets/Project/ScreenShot/include.png)
