@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        #region 
+
+
+
+        #endregion
     }
     void Start()
     {

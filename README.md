@@ -29,3 +29,8 @@ Dual camera split-screen setup (player + ghost views)
  ![](Assets/Project/ScreenShot/include.png)
 
  [![Watch Video](Assets/Project/ScreenShot/video_thumb.png)](Assets/Project/ScreenShot/gameplay.mp4)
+
+
+## Download APK
+
+  [Click here to download Sync Dash APK](https://drive.google.com/uc?export=download&id=1PXeeSMnM-7oy2OiCe-7X7mGkNiW1WVJ0)
