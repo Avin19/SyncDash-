@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Orb
-  m_Shader: {fileID: -6465566751694194690, guid: 1a48b2330c14b4c439f4929bc6c0eb6e, type: 3}
+  m_Name: Glow
+  m_Shader: {fileID: -6465566751694194690, guid: 3f6836d468749a64bae3f5ebc2495c96, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,14 +37,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Power: -1.16
+    - _GlowStrength: 2.34
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 3
     m_Colors:
-    - _baseColor: {r: 0.09362746, g: 0.0011009714, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _GlowColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &3312210857141615618
+--- !u!114 &3079799331467734313
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

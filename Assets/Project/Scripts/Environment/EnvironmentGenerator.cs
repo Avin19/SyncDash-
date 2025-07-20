@@ -9,7 +9,7 @@ public class EnvironmentGenerator : MonoBehaviour
     [SerializeField] private int initialTiles = 5;
     [SerializeField] private float spawnZ = 0f;
 
-    private Queue<GameObject> _tileQueue = new Queue<GameObject>();
+
 
     void Start()
     {
@@ -30,17 +30,12 @@ public class EnvironmentGenerator : MonoBehaviour
 
     private void SpawnTile()
     {
-        GameObject tile = Instantiate(pfgroundTile, new Vector3(0f, -0.53f, 1f * spawnZ), Quaternion.identity);
+        Vector3 newTilePosition = new Vector3(0f, -0.53f, 1f * spawnZ);
+        GameObject tile = PoolManager.Instance.GetGroundTile();
+        tile.transform.position = newTilePosition;
+        tile.SetActive(true);
 
-        _tileQueue.Enqueue(tile);
         spawnZ += tileLength;
-
-        if (_tileQueue.Count > initialTiles + 2)
-        {
-            GameObject _oldTile = _tileQueue.Dequeue();
-            Destroy(_oldTile);
-        }
-
 
     }
 }

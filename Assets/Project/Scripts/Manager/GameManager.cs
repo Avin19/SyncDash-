@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
 public class GameManager : MonoBehaviour
@@ -10,9 +12,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedIncresaseRate = 0.1f;
     [SerializeField] private float maxSpeed = 20f;
 
-
-
     private bool isGamedRuninng;
+    [Header("Motion blur Effect ")]
+    [SerializeField] private VolumeProfile volumeProfile;
+    [SerializeField] private float blurMaxIntensity = 0.5f;
+    [SerializeField] private float blurStartSpeed = 5f;
+    private MotionBlur motionBlur;
+    [SerializeField] private Transform player;
 
     void Awake()
     {
@@ -27,7 +33,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        //motionBlur = volumeProfile.GetType
+        volumeProfile.TryGet<MotionBlur>(out motionBlur);
     }
     void Update()
     {
@@ -35,6 +41,11 @@ public class GameManager : MonoBehaviour
 
         gameSpeed += speedIncresaseRate * Time.deltaTime;
         gameSpeed = Mathf.Min(gameSpeed, maxSpeed);
+        if (motionBlur != null)
+        {
+            float t = Mathf.InverseLerp(blurStartSpeed, maxSpeed, gameSpeed);
+            motionBlur.intensity.value = Mathf.Lerp(0f, blurMaxIntensity, t);
+        }
 
     }
 
@@ -50,5 +61,10 @@ public class GameManager : MonoBehaviour
     public void SetIsGameRuning(bool _isGamedRuninng)
     {
         isGamedRuninng = _isGamedRuninng;
+    }
+
+    public Transform GetPlayerPosition()
+    {
+        return player;
     }
 }

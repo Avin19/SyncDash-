@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2941981025532264111}
   m_Layer: 0
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,8 +126,9 @@ MonoBehaviour:
   - {fileID: 3171492807843680416}
   - {fileID: 671827440612181803}
   - {fileID: 973576407318323449}
-  pfObstaclePrefab: {fileID: 4795919976478937652, guid: 3d8c4ba965fb36345b0fa4940ef58beb, type: 3}
-  pfOrbPrefab: {fileID: 3947157679743318566, guid: c5b77d58a2b7ec5499eae8b9d45ca97c, type: 3}
+  returnOffset: 30
+  obstacleSpawnChance: 19
+  orbSpawnChance: 40
 --- !u!1 &501104616099857245
 GameObject:
   m_ObjectHideFlags: 0

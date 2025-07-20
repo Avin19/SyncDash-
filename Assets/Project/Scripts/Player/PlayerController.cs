@@ -1,13 +1,18 @@
 
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float fallMultiplier = 3f;
+    [SerializeField] private float lowJumpMultiplier = 6f;
+    private bool isGrounded = true;
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private ParticleSystem particleSystem;
 
     public bool jump = false;
 
@@ -27,8 +32,35 @@ public class PlayerController : MonoBehaviour
         {
             jump = false;
         }
+
+        Fall();
     }
 
+    private void Fall()
+    {
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1f) * Time.deltaTime;
+        }
+        else if (rb.velocity.y > 0 && !Input.GetMouseButton(0))
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1f) * Time.deltaTime;
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Orb"))
+        {
+            particleSystem.Play();
+        }
+    }
 }
 [System.Serializable]
 public struct PlayerState
