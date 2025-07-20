@@ -27,3 +27,5 @@ Dual camera split-screen setup (player + ghost views)
 
 ### Plant UML 
  ![](Assets/Project/ScreenShot/include.png)
+
+ [![Watch Video](Assets/Project/ScreenShot/video_thumb.png)](Assets/Project/ScreenShot/gameplay.mp4)
